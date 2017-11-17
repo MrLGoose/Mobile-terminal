@@ -4,16 +4,17 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../chumo/css/index.css"/>
 		<script type="text/javascript" src="js/zepto.js" ></script>
 		<script type="text/javascript" src="js/touch.js" ></script>
 	</head> 
 	<body>
 		<div class="box" id="box">
-			<div>11</div>
-			<div>22</div>
-			<div>33</div>
-			<div>44</div>
+			<div>11我</div>
+			<div>22你</div>
+			<div>33她 </div>
+			<!--<div>44</div>-->
+			<div><button id="btn">百度</button></div>
 		</div>
 	</body>
 	<script>
@@ -43,6 +44,10 @@
 //	
 
 			var n=0;
+			var box=document.getElementById('box');
+			box.addEventListener("touchstart",function(ev){
+				ev.preventDefault()
+			})
 			$('#box').on("swipeLeft",function(){
 				n++;
 				if(n==$("#box div").length){
@@ -59,9 +64,12 @@
 				$("#box").css("transform","translate3d(-"+n*25+"%,0,0)");
 			})
 			
-			
+			$('#btn').on('tap',function(){
+				location.href='http://baidu.com';
+			})
 		
 
 	
 	</script>
 </html>
+
