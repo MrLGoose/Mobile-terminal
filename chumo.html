@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../chumo/css/index.css"/>
+		<script type="text/javascript" src="js/zepto.js" ></script>
+		<script type="text/javascript" src="js/touch.js" ></script>
+	</head> 
+	<body>
+		<div class="box" id="box">
+			<div>11</div>
+			<div>22</div>
+			<div>33</div>
+			<div>44</div>
+		</div>
+	</body>
+	<script>
+//		var oDiv=document.getElementById('box')
+//		var divs=document.getElementsByTagName(div)
+//		var w=innerWidth;
+//		oDiv.addEventListener("touchstart",function(ev){
+//			ev.preventDefault();
+//			var posLeft=this.offsetLeft;
+//			var ex=ev.changedTouches[0].pageX;
+//			console.log(ex);
+//			oDiv.addEventListener('touchmove',function(ev){
+//				var dis=ev.changedTouches[0].pageX-ex;
+//				oDiv.style.left=(posLeft+dis)+"px";
+//			})
+//			oDiv.addEventListener("touchend",function(ev){
+//				var n=Math.round(oDiv.offsetLeft/w);
+//				if(n<=-(divs.length-1)){
+//					n=-(dis.length-1)
+//				}
+//				if(n>0){
+//					n=0;
+//				}
+//				oDiv.style.left=n*w+"px"
+//			})
+//		})
+//	
+
+			var n=0;
+			$('#box').on("swipeLeft",function(){
+				n++;
+				if(n==$("#box div").length){
+					n=$("#box div").length-1;
+				}
+				$("#box").css("transform","translate3d(-"+n*25+"%,0,0)");
+			})
+			
+				$('#box').on("swipeRight",function(){
+					n--
+					if(n<0){
+						n=0;
+					}
+				$("#box").css("transform","translate3d(-"+n*25+"%,0,0)");
+			})
+			
+			
+		
+
+	
+	</script>
+</html>
